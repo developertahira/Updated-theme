@@ -1,0 +1,264 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "custom_video_slider_z8RPch": {
+      "type": "Custom-video-slider",
+      "blocks": {
+        "video_block_Vrac7k": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/bde839c0042d4b0183acd1e3c9ba2b72.mp4"
+          }
+        },
+        "video_block_PCT6qy": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/694042056549426b83d901cff712b56a.mp4"
+          }
+        },
+        "video_block_7MLM63": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/08aed5f60ed04c62a8da6b1ef1a06178.mp4"
+          }
+        },
+        "video_block_BYWDnr": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d61dbc880d8d4865bf95aec2e0564066.mp4"
+          }
+        },
+        "video_block_WRhb4q": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3fdc512e96a44093b5520420efc3500a.mp4"
+          }
+        },
+        "video_block_xLDctx": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3ff1269a1ceb4984860ea0fe9e21ad9a.mp4"
+          }
+        },
+        "video_block_hHwxJt": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/62c08907968a4688be4d8844df7f258c.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_Vrac7k",
+        "video_block_PCT6qy",
+        "video_block_7MLM63",
+        "video_block_BYWDnr",
+        "video_block_WRhb4q",
+        "video_block_xLDctx",
+        "video_block_hHwxJt"
+      ],
+      "settings": {
+        "heading": "Video Slider",
+        "Description": "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator."
+      }
+    },
+    "rich_text_NkjmU8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_aYewkp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_FJFYzy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "button_g7b6Ab": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_aYewkp",
+        "text_FJFYzy",
+        "button_g7b6Ab"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "video_slider_without_app_UdEjBX": {
+      "type": "video-slider-without-App",
+      "blocks": {
+        "testimonial_e6JP9T": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/6799742-uhd_2160_3840_30fps.mp4"
+          }
+        },
+        "testimonial_NVnGmC": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/6952469-uhd_2160_3840_30fps.mp4"
+          }
+        },
+        "testimonial_VtpngY": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/7393134-hd_1080_1920_25fps.mp4"
+          }
+        },
+        "testimonial_Q9GdTq": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/program.mp4"
+          }
+        },
+        "testimonial_GPd44W": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/6406028-hd_1080_1920_25fps.mp4"
+          }
+        },
+        "testimonial_h3BF9d": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/4434242-uhd_2160_3840_24fps.mp4"
+          }
+        },
+        "testimonial_4C6LxN": {
+          "type": "testimonial",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/with tea.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_e6JP9T",
+        "testimonial_NVnGmC",
+        "testimonial_VtpngY",
+        "testimonial_Q9GdTq",
+        "testimonial_GPd44W",
+        "testimonial_h3BF9d",
+        "testimonial_4C6LxN"
+      ],
+      "settings": {
+        "title": "Video slider",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "banner_video_autoplay_UQEGBU": {
+      "type": "Banner-video-autoplay",
+      "settings": {
+        "heading": "",
+        "fullwidth": true,
+        "autoplay": true,
+        "controller": false,
+        "self_hosted_video": "shopify:\/\/files\/videos\/6550419-uhd_3840_2160_25fps.mp4",
+        "video_url": ""
+      }
+    }
+  },
+  "order": [
+    "banner_video_autoplay_UQEGBU",
+    "image_banner",
+    "featured_collection",
+    "pagefly-home",
+    "custom_video_slider_z8RPch",
+    "rich_text_NkjmU8",
+    "video_slider_without_app_UdEjBX"
+  ]
+}

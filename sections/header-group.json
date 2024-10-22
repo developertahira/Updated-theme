@@ -1,0 +1,103 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_aXBxBq": {
+          "type": "menu",
+          "settings": {
+            "mega_heading_one": "Men",
+            "mega_linklist_1": "men",
+            "image_1": "shopify:\/\/shop_images\/baseball.jpg",
+            "image_ratio": "original",
+            "image_focal_point": "center",
+            "section_description": "up to 50% OFF",
+            "image_heading": "Sale",
+            "show_overlay_text": false,
+            "overlay_text": ""
+          }
+        },
+        "menu_hEW3LD": {
+          "type": "menu",
+          "settings": {
+            "mega_heading_one": "Caegories",
+            "mega_linklist_1": "categories",
+            "image_1": "shopify:\/\/shop_images\/polo.jpg",
+            "image_ratio": "original",
+            "image_focal_point": "center",
+            "section_description": "",
+            "image_heading": "",
+            "show_overlay_text": true,
+            "overlay_text": "Your default overlay text"
+          }
+        },
+        "menu_ptccih": {
+          "type": "menu",
+          "settings": {
+            "mega_heading_one": "Accesories",
+            "mega_linklist_1": "accessories",
+            "image_ratio": "original",
+            "image_focal_point": "center",
+            "section_description": "",
+            "image_heading": "",
+            "show_overlay_text": false,
+            "overlay_text": "Your default overlay text"
+          }
+        }
+      },
+      "block_order": [
+        "menu_aXBxBq",
+        "menu_hEW3LD",
+        "menu_ptccih"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "none",
+        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 8,
+        "enable_transparent-header": true,
+        "color-transparent": "White"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

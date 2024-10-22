@@ -1,0 +1,258 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <ul
+                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  role="list"
+                >
+                  {%- for childlink in link.links -%}
+                  {% if link.title == "Blog" %}
+                    
+          <div class="blog-list-container">
+                     <div class="mega-menu">
+                        {% if section.settings.mega_menu_images_toggle != 'none' %}
+                            <div class="menu-columns">
+                                {% for block in section.blocks %}
+                                    <div class="menu-column">
+                                        <h3>{{ block.settings.mega_heading_one }}</h3>
+                                        <ul>
+                                            {% for link in block.settings.mega_linklist_1.links %}
+                                                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+            <!-- Submenu Item 2: Image -->
+                    <ul class="mega-menu-container">
+                      {% if section.settings.mega_menu_images_toggle != 'none' %}
+                          {% for block in section.blocks %}
+                              {% if block.settings.image_1 %}
+                                  <li class="mega-menu-item">
+                                      <div style="position: relative;">
+                                          <img src="{{ block.settings.image_1 | img_url: 'master' }}" 
+                                               style="object-fit: {{ block.settings.image_ratio }}; 
+                                                      object-position: {{ block.settings.image_focal_point }};" 
+                                               alt="{{ block.settings.mega_heading_one }}" > <!-- Adjust alt text -->
+                                        
+                                        
+                                              
+                   <h1 class="overlay-heading">{{ block.settings. image_heading}}</h1>  
+                    {% if block.settings.show_overlay_text %}
+                          <div class="overlay-text" 
+                               style="position: absolute; top: 85%; left: 50%; 
+                                      transform: translate(-50%, -50%); 
+                                      color: black; 
+                                       font-size: 15px;
+                                        font-weight: 500;
+                                      padding: 10px; border-radius: 5px;">
+                              {{ block.settings.overlay_text | default: "Your Overlay Text" }}
+                          </div>
+                                          {% endif %}
+                                      </div>
+                  
+                                      {% if block.settings.section_description %}
+                                          <p>{{ block.settings.section_description }}</p> <!-- Description -->
+                                      {% endif %}
+                                  </li>
+                              {% endif %}
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
+
+
+           </div>
+                    {% endif %}
+ 
+                    <li>
+                      <a
+                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                        href="{{ childlink.url }}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        {% if childlink.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ childlink.title | escape }}
+                      </a>
+                      {%- if childlink.links != blank -%}
+                        <ul class="list-unstyled" role="list">
+                          {%- for grandchildlink in childlink.links -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                href="{{ grandchildlink.url }}"
+                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                {% if grandchildlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ grandchildlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+
+
+                <style>
+.style-linklist a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    margin-left: 50px;
+}
+  a.mega-menu__link.mega-menu__link--level-2.link {
+    text-align: center;
+}
+  .blog-list-container {
+      display: flex;
+     justify-content: space-between;
+                  }
+/*  Linklist styling   */
+
+.mega-menu {
+    display: flex;
+    justify-content: space-between; /* Space out columns */
+}
+
+.menu-columns {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+}
+
+.menu-column {
+    flex: 1; /* Each column takes equal width */
+    margin: 0 10px; /* Space between columns */
+  width: 125px;
+}
+
+.menu-column h3 {
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between heading and list */
+}
+
+.menu-column ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0; /* Remove default padding */
+}
+
+.menu-column li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.menu-column a {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Change link color */
+}
+
+a#HeaderMenu-blog-test-1 {
+    display: none;
+}
+
+/*  images styling     */
+                  
+.mega-menu-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping if there are more than 3 items */
+    gap: 20px;  /* Space between items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-item {
+    flex: 1 1 calc(33.333% - 20px); /* Three columns, with 20px space between */
+    box-sizing: border-box;  /* Ensure padding and border are included in width */
+    position: relative;
+}
+
+.mega-menu-item img {
+    width: 100%; /* Make the image fit its container */
+    height: auto; /* Keep the aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.overlay-text {
+    text-align: center;
+    font-size: 1rem; /* Adjust the font size for the overlay */
+}
+
+.mega-menu-item p {
+    margin-top: 10px; /* Space above the description */
+    text-align: center; /* Center the text under the image */
+}
+.overlay-heading {
+      font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .mega-menu-item {
+        flex: 1 1 100%; /* Full-width on smaller screens */
+    }
+}
+
+                  
+</style>

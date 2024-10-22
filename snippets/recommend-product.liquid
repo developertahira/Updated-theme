@@ -1,0 +1,181 @@
+
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<div id="recommended-products">
+  {% if cart.item_count > 0 %}
+    <h2 class="product-heading">You Might Also Like</h2>
+
+    <div class="recommended-products-wrapper">
+      {% assign recommended_collection = collections[settings.cart_drawer_recommended_collection] %}
+      
+      {% if recommended_collection and recommended_collection.products.size > 0 %}
+        <div class="recommended-products-slider">
+          {% for product in recommended_collection.products %}
+            <div class="recommended-product">
+              <a href="{{ product.url }}">
+                <img src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.title }}">
+              </a>
+              <div>
+                <h3>{{ product.title }}</h3>
+                <p>{{ product.price | money }}</p>
+              </div>
+              {% if product.variants.size > 1 %}
+                <form action="/cart/add" method="post" enctype="multipart/form-data">
+                  <button type="submit" class="add-to-cart">ADD</button>
+                </form>
+              {% else %}
+                <form action="/cart/add" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                  <button type="submit" class="add-to-cart">ADD</button>
+                </form>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No recommended products at the moment.</p>
+      {% endif %}
+    </div>
+  {% else %}
+    <p>Your cart is empty. Add items to your cart to see recommendations.</p>
+  {% endif %}
+</div>
+
+<script>
+    $(document).ready(function(){
+$('.recommended-products-slider').slick({
+  arrows: true,
+  dots: false,
+  infinite: false,
+  speed: 300,
+    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+    nextArrow: '<button type="button" class="slick-next">Next</button>',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+   });
+    });
+</script>
+
+
+
+<style>
+
+/* Custom styling for Slick arrows */
+.slick-prev,
+.slick-next {
+  border: none;           /* Remove default border */
+  padding: 10px;
+  border-radius: 50%;     /* Make the arrows circular */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 10px; /* Position the previous arrow */
+}
+
+.slick-next {
+  right: 10px; /* Position the next arrow */
+}
+
+
+.slick-prev:before, .slick-next:before {
+  color: #2c7fa8;
+}
+.recommended-product.slick-slide {
+    display: flex;
+}
+  
+  .recommended-products-wrapper {
+    margin: 5%;
+}
+  .product-heading {
+        background: beige;
+    margin-top: 0px;
+    padding: 15px;
+    text-align: center;
+        border-radius: 10px;
+  }
+  #recommended-products {
+  margin-top: 20px;
+/*  padding: 15px; 
+  background-color: #f9f9f9; */
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+
+.recommended-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.recommended-product img {
+width: 80%;
+    height: 85%;
+      margin-right: 5%;
+      border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+.recommended-product h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.recommended-product p {
+  color: #999;
+  margin: 0;
+}
+
+.add-to-cart {
+
+  color: black;
+  padding: 8px 21px;;
+
+  border-radius: 5px;
+  cursor: pointer;
+      background: #f5f5dc;
+  border: none;
+}
+
+</style> 

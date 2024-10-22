@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share{{ product.metafields.custom.text_1.value }}"
+          }
+        },
+        "collapsible_tab_rndccn": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "why {{ block.settings.page.title }}",
+            "icon": "none",
+            "content": "<p>Metafields Data<\/p>",
+            "collapse_liquid": "{{ product.metafields.custom.image_with_text_section.value | img_tag }}",
+            "metafield_image": "shopify:\/\/shop_images\/sneaker.jpg",
+            "page": "{{ product.metafields.custom.shipping.value }}"
+          }
+        },
+        "text_aQNpiK": {
+          "type": "text",
+          "settings": {
+            "text": "Text block{{ product.metafields.custom.text_1.value }}{{ product.metafields.custom.color_bit.value.label.value }}",
+            "text_style": "body"
+          }
+        },
+        "complementary_AX3TFQ": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "pagination_style": "counter",
+            "image_ratio": "square",
+            "enable_quick_add": false
+          }
+        },
+        "custom_liquid_hV7URG": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>.custom.form__label{margin-bottom: 0.6rem}.field.custom{margin-top:0}.custom .field__input{padding-top:0.8rem}<\/style>  \n<label class=\"form__label custom\" for=\"your-label\">Your label<\/label>\n<div class=\"field custom\">\n    <input class=\"field__input\" form=\"{{ 'product-form-' | append: section.id }}\" type=\"text\" id=\"your-label\" name=\"properties[Your label]\">\n<\/div>"
+          }
+        },
+        "custom_liquid_hiQNez": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>.custom-checkbox:hover.custom-checkbox:after,.custom-checkbox:after{box-shadow:none}.custom-checkbox{align-items: center}<\/style>\n<div class=\"field custom-checkbox\"> \n    <input type=\"checkbox\" name=\"properties[Your label]\"form=\"{{ 'product-form-' | append: section.id }}\" value=\"Yes\" id=\"your-label\">\n    <label style=\"margin-left: 5px;margin-bottom: 0;\" class=\"form__label\" for=\"your-label\">Your label<\/label><br>\n<\/div>"
+          }
+        },
+        "button_Ca6hc8": {
+          "type": "button",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "description",
+        "share",
+        "collapsible_tab_rndccn",
+        "text_aQNpiK",
+        "complementary_AX3TFQ",
+        "custom_liquid_hV7URG",
+        "custom_liquid_hiQNez",
+        "button_Ca6hc8",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_At8bfE": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cmkzba": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.custom.creaters.value.name.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_hbb3gK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.creaters.value.bio | metafield_tag }}<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_zNQYAt": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "{{ product.url }}",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cmkzba",
+        "text_hbb3gK",
+        "button_zNQYAt"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2_654b526f-f254-4143-8901-b87ae040f1cc-removebg-preview.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "image_with_text_At8bfE"
+  ]
+}

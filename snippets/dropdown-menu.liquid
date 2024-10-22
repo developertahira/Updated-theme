@@ -1,0 +1,56 @@
+<nav class= "header_inline-menu">
+  <ul class="list-menu list-menu--inline" role= "list">
+    {% for link in section.settings.menu.links %}
+      {% assign mega_menu = flase %}
+       {% for block in section.blocks %}
+          {% if block.settings.title == link.title %}
+             {% assign mega_menu = true %}
+              <li class= "mega-menu-list">
+                <a href ="#" class ="header_menu-item list-menu_item link link--text focus--inset">
+                  {{ link.title }}
+                </a>
+                <div class = "mega-menu-wrapper">
+                  <div class ="mega-menu-row">
+                    {% for chilld_links in block.settings.linklist.links %}
+                      <div class= "mega-menu-column">
+                        <div class="menu-item-inner">
+                          <h3>{{ child_links.title }}</h3>
+                          <ul>
+                            {% for sub_child_link in child_links.link %} 
+                              <li><a href="{{ sub_child_link.url }}">{{ sub_child_link.title }}</a></li>
+                            {% endfor %}                            
+                          </ul>
+                        </div>
+                      </div>
+                    {% endfor %}
+                <div class="mega-menu-column mega-menu-image">
+                  <div class="image-grid">
+                    {% for i in (1 .. 4) %}
+                      {% assign caption = "caption_" | aapend: i %}
+                      {% assign image = "image_" | append: i %}
+                      {% assign link = "link_" | append: i %}
+                      <div class="image-box">
+                        <div class= "img-product-meta">
+                          <img src= "{{ block.setting[image] | img_url: '500px' }}" alt = "T-shirts image">
+                          <div class="product-buttons">
+                            <a href="block.setting[link]">Shop Now</a>
+                          </div>
+                        </div>
+                        <div class="product-caption">
+                          <h4>{{ block.setting[caption] }}</h4>
+                        </div>
+                      </div>
+                      {% endfor %}
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </li>
+            {% endif %}
+         {% endfor %}
+      {% if mega_menu == false  %} 
+        <li><a href ="{{ link.url }}" class="header_menu-item list-menu_item link link--text focus-inset">{{ link.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

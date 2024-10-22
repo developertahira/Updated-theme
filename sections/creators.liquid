@@ -1,0 +1,66 @@
+<h1>display Metaobjects</h1>
+
+
+  {% for creaters in shop.metaobjects.creaters.values %}
+  <div class="creators-container">
+    <!-- HTML code for Shopify Meta Object Tutorial by https://websensepro.com -->
+    <div class="img">
+        <img src="{{ creaters.image | img_url: '300x300' }}">
+    </div>
+    <div class="creators-body">
+        <h2 class="h1">{{ creaters.name }}</h2>
+        <p class="creators-text">{{ creaters.bio }}</p>
+        <a href="{{ creaters.social }}" class="button button--primary">WebsiteLink</a>
+    </div>
+  </div>
+{% endfor %}
+
+<style>
+  .creators-container{
+    display: flex;
+    background-color: #f6f6f6;
+    padding: 3rem;
+    margin-top: 5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 2rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+  img{
+      max-width: 100%;
+      height: auto;
+  }
+  .creators-container h4{
+      margin-bottom: 0;
+  }
+  h2{
+    font-weight: bold;
+  }
+  .creators-container .img{
+    width: 50%;
+  }
+  .creators-body{
+    width: 50%;
+    line-height: 1.8;
+  }
+  .creators-body h2{
+    margin: 0;
+  }
+  @media only screen and (max-width: 768px) {
+      .creators-container{
+          flex-direction: column;
+      }
+    }
+  </style>
+  {% schema %}
+    {
+      "name": "Creators",
+      "settings": [],
+      "presets": [{
+          "name": "Creators",
+          "category": "Text"
+    }]
+    }
+  {% endschema %}

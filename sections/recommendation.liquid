@@ -1,0 +1,23 @@
+<section id="product-recommendations">
+  {% if product_recommendations %}
+    <h2>{{ 'recommendations.title' | t }}</h2>
+    <div class="recommendation-grid">
+      {% for product in product_recommendations %}
+        <div class="recommended-product">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <p>{{ product.title }}</p>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+fetch(`/recommendations/products.json?product_id=PRODUCT_ID&limit=4`)
+  .then(response => response.json())
+  .then(data => {
+    let recommendations = data.products;
+    // Dynamically add recommendations to the cart drawer
+  });

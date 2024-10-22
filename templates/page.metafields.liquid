@@ -1,0 +1,73 @@
+<h1>This Metafield Page for Testing & Call Metafields</h1>
+
+
+ {{ page.metafields.custom.simple_text }}
+ <br>
+ {{ page.metafields.custom.simple_text_list_.value}}
+
+ <h2>Above list values display without commas & space that's why now use for loop & unless for display list in comma's </h2>
+
+ {% for text in page.metafields.custom.simple_text_list_.value %}
+        {{ text }} {%- unless forloop.last -%}, {%- endunless  -%}
+   {% endfor %} 
+<h1>images</h1>
+<br>
+{{ page.metafields.custom.images }}
+<br>
+{{ page.metafields.custom.images.value }}
+<br>
+{{ page.metafields.custom.images.value | image_url}}
+<br>
+
+{{ page.metafields.custom.images.value | img_tag}}
+
+<h1>list of images</h1>
+{{ page.metafields.custom.images_list_.value}}
+<br>
+{{ page.metafields.custom.images_list_.value | img_url }}
+
+<br>
+{% for image in page.metafields.custom.images_list_.value %}
+{{ image | img_tag }}
+  {% endfor %}
+
+
+  <h1>Products</h1>
+{{ page.metafields.custom.products }}
+<br>
+{{ page.metafields.custom.products.value}}
+<br>
+{{ page.metafields.custom.products.value. title}}
+<br>
+{% assign product = page.metafields.custom.products.value %}
+  {{ product.title }}
+
+  <h1>List of Products</h1>
+
+  {{ page.metafields.custom.products }}
+<br>
+{{ page.metafields.custom.list_of_product.value}}
+<br>
+{{ page.metafields.custom.list_of_product.value. title}}
+<br>
+{% assign product_list = page.metafields.custom.list_of_product.value %}
+  {% for products in product_list %}
+    {{ products.title }} 
+    {{ products.featured_image | img_tag }}<br><br>
+    {% endfor %}
+
+<h1>Call JSON Objects</h1>
+{{ page.metafields.custom.json }}
+<br>
+{{ page.metafields.custom.json.value }}
+<br>
+{{ page.metafields.custom.json.value.name }}
+
+<h1>Metaobjects</h1>
+{{ page.metafields.custom.metaobjects }}
+<br>
+{{ page.metafields.custom.metaobjects.value }}
+<br>
+{{ page.metafields.custom.metaobjects.value.gender }}
+<br>
+{{ page.metafields.custom.metaobjects.type }}

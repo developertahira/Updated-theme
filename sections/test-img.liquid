@@ -1,0 +1,31 @@
+<div>
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | img_url:'master' }}" alt="">
+        {% endif %}
+      {% endfor %}
+    </div>
+{% schema %}
+  {
+    "name": "Image Called",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name":"Image Called",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Called"
+      }
+    ]
+  }
+{% endschema %}
